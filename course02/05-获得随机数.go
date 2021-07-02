@@ -17,7 +17,7 @@ func main() {
 		如果用户输入“exit"，就直接退出游戏
 	*/
 	myRand := rand.New(rand.NewSource(time.Now().UnixNano()))
-	var n = int64(myRand.Intn(1000))
+	var n = 100 + int64(myRand.Intn(900))
 	//fmt.Println(num)
 	var num string
 	for {
@@ -33,7 +33,7 @@ func main() {
 				fmt.Println("猜大了再来一遍！输入exit可以退出")
 			} else if num2 < n {
 				fmt.Println("猜小了再来一遍！输入exit可以退出")
-			} else if num2 == n{
+			} else if num2 == n {
 				fmt.Println("您猜对了")
 				break
 			}
