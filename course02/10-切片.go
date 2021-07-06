@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func main() {
 	//var slice = []int{10, 20, 30}
@@ -25,4 +28,6 @@ func main() {
 	copy(slice3, slice)
 	fmt.Println(slice)
 	fmt.Println(slice3)
+	sort.Ints(slice)
+	fmt.Println(slice)
 }
