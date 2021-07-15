@@ -2,25 +2,25 @@ package main
 
 import "fmt"
 
-// Person a person class
-type Person struct {
+// Person1 a Person1 class
+type Person1 struct {
 	name string
 	age int
 	gender bool
 }
 
-// Student Student inherit from Person and can make student object
+// Student Student inherit from Person1 and can make student object
 type Student struct {
 	// 继承父类的所有属性和方法
-	Person
+	Person1
 	grade int
 }
 
-//skill Person method
-func (p *Person) skill() {
-	fmt.Println("person学习", p.name)
+//skill Person1 method
+func (p *Person1) skill() {
+	fmt.Println("Person1学习", p.name)
 	p.name = "李四"
-	fmt.Println("person学习", p.name)
+	fmt.Println("Person1学习", p.name)
 }
 
 // 重写父类的方法
@@ -29,13 +29,13 @@ func (s *Student) skill() {
 }
 
 func main() {
-	person := Person{
+	person1 := Person1{
 		name: "张三",
 		age: 20,
 		gender: true,
 	}
-	person.skill()
-	fmt.Println(person.name)
+	person1.skill()
+	fmt.Println(person1.name)
 	//student := Student{}
 	//student.name = "小明"
 	//student.age = 12
@@ -43,6 +43,6 @@ func main() {
 	//student.grade = 89
 	//student.skill()
 
-	xm := Student{Person{name: "小明", age: 20, gender: true}, 90}
+	xm := Student{Person1{name: "小明", age: 20, gender: true}, 90}
 	xm.skill()
 }
