@@ -29,5 +29,6 @@ func main() {
 	} else {
 		fmt.Println(p2)
 	}
+//	map json之后也是一个对象
 
 }
