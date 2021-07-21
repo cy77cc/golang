@@ -1,0 +1,4 @@
+Name:兰博基尼
+Price:100000
+Cap:5
+Power:油电混合

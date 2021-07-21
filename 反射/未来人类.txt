@@ -1,0 +1,5 @@
+Name:未来人类
+Price:10000
+Cpu:Core i7
+Memory:16
+Disk:1024

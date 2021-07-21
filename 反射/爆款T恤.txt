@@ -1,0 +1,5 @@
+Size:40
+Sex:false
+Name:爆款T恤
+Price:10000
+Color:红色

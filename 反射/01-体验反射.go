@@ -7,6 +7,7 @@ import (
 
 type Human struct {
 	Name string `json:"name"`
+	//Food string `food:"狗狗喜欢吃得十五"`
 }
 
 func (h Human) SayName() {
@@ -37,7 +38,7 @@ func main() {
 	//获得typeof属性的个数
 	//fmt.Println(typeof.NumField()) // 1
 
-	//获得typeof方法的个数
+	//获得typeof方法的个数，typeof必须是结构体类别
 	//fmt.Println(typeof.NumMethod()) // 1
 
 	//获得第i个属性，越界会报错
@@ -93,7 +94,7 @@ func main() {
 	//获取第i个参数类型
 	fmt.Println(method.Type.In(1))
 
-	//获取地址或者接口值得Value封装，反射值
+	//获取地址或者接口指向内容的Value封装，反射值
 	//elem := ptrValue.Elem()
 	//fmt.Println(elem)
 	//fmt.Println(elem.Interface())
