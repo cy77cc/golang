@@ -1,0 +1,44 @@
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"io"
+	"net"
+	"os"
+)
+
+func checkError(err error, when string) {
+	if err != nil {
+		fmt.Println(err, when)
+		fmt.Println("客户端异常退出")
+		// 退出
+		os.Exit(1)
+	}
+}
+
+func main() {
+	conn, err := net.Dial("tcp", "127.0.0.1:7111")
+	checkError(err, "net.Dial")
+	defer func() {
+		_ = conn.Close()
+		fmt.Println("客户端正常退出")
+	}()
+	file, err := os.Open(`D:\360Downloads\图片\1000673.jpg`)
+	checkError(err, "os.Open")
+	defer func() {
+		_ = file.Close()
+	}()
+	buf := make([]byte, 1024)
+	reader := bufio.NewReader(file)
+	for {
+		n, err := reader.Read(buf)
+		if err == io.EOF {
+			fmt.Println("文件上传成功")
+			break
+		}
+		_, _ = conn.Write(buf[:n])
+	}
+	n, _ := conn.Read(buf)
+	fmt.Println(string(buf[:n]))
+}
