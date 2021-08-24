@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func main() {
+func main02() {
 	// 返回当前工作目录的根目录
 	getwd, err := os.Getwd()
 	if err == nil {
@@ -47,5 +47,22 @@ func main() {
 		fmt.Println(stat.ModTime())
 	} else {
 		fmt.Println(err)
+	}
+}
+
+func main() {
+	file, err := os.OpenFile(`E:\golang`, os.O_RDONLY, os.ModeDir)
+	if err != nil {
+		fmt.Println("openfile", err)
+		return
+	}
+
+	defer func() {
+		_ = file.Close()
+	}()
+
+	readDir, _ := file.ReadDir(-1)
+	for i := 0; i < len(readDir); i++ {
+		fmt.Println(readDir[i].Name(), readDir[i].IsDir())
 	}
 }
