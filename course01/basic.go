@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/cmplx"
+)
 
 func variable() {
 	var a int
@@ -18,7 +21,27 @@ func variable() {
 	*/
 }
 
+func euler() {
+	// c := 3 + 4i
+	// fmt.Println(cmplx.Abs(c))
+	fmt.Println(cmplx.Exp(10))
+}
+
+func enums() {
+	const (
+		b = 1 << (10 * iota)
+		kb
+		mb
+		gb
+		tb
+		pb
+	)
+	fmt.Println(b, kb, mb, gb, pb)
+}
+
 func main() {
-	variable()
+	// variable()
+	// euler()
+	enums()
 	fmt.Println()
 }
