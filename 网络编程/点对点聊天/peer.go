@@ -70,7 +70,6 @@ func RegGetPeerAddress(req string) string {
 }
 
 func main() {
-	peerNameAddressMap = make(map[string]string)
 	// 从命令行接收一个用于监听的端口
 	peerPort = flag.String("port", "7111", "port")
 	peerName = flag.String("name", "zhang", "peername")

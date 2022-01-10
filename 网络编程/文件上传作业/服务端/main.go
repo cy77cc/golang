@@ -27,7 +27,7 @@ func main() {
 	defer func() {
 		_ = conn.Close()
 	}()
-	file, err := os.OpenFile("E:\\golang\\网络编程\\文件上传作业\\服务端\\temp.jpg", os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0666)
+	file, err := os.OpenFile("E:\\golang\\网络编程\\文件上传作业\\服务端\\temp.png", os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0666)
 	checkError(err, "os.OpenFile")
 	defer func() {
 		_ = file.Close()

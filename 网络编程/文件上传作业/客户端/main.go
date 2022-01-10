@@ -24,7 +24,7 @@ func main() {
 		_ = conn.Close()
 		fmt.Println("客户端正常退出")
 	}()
-	file, err := os.Open(`D:\360Downloads\图片\1000673.jpg`)
+	file, err := os.Open(`C:\Users\48356\Desktop\lifecycle.png`)
 	checkError(err, "os.Open")
 	defer func() {
 		_ = file.Close()
