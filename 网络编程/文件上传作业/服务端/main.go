@@ -27,7 +27,7 @@ func main() {
 	defer func() {
 		_ = conn.Close()
 	}()
-	file, err := os.OpenFile("E:\\golang\\网络编程\\文件上传作业\\服务端\\temp.png", os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0666)
+	file, err := os.OpenFile("D:\\learn\\golang\\网络编程\\文件上传作业\\服务端\\temp.iso", os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0666)
 	checkError(err, "os.OpenFile")
 	defer func() {
 		_ = file.Close()
@@ -41,6 +41,7 @@ func main() {
 		//_, err = file.Write(buf)
 		_, err = writer.Write(buf[:n])
 		checkError(err, "writer.Write")
+		fmt.Println("文件接收中……")
 		if n < 1024 {
 			_, _ = writer.Write(buf[:n])
 			_, _ = conn.Write([]byte("ok"))

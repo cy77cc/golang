@@ -13,7 +13,7 @@ type Stu struct {
 }
 
 func main() {
-	db, err := sql.Open("mysql", "root:123456@(localhost:3306)/shop")
+	db, err := sql.Open("mysql", "root:MyPassword@123@(localhost:3306)/shop")
 	if err != nil {
 		fmt.Println("连接失败", err)
 		return

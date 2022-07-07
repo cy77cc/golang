@@ -24,7 +24,7 @@ func main() {
 		_ = conn.Close()
 		fmt.Println("客户端正常退出")
 	}()
-	file, err := os.Open(`C:\Users\48356\Desktop\lifecycle.png`)
+	file, err := os.Open(`D:\Centos 7\CentOS-7-x86_64-DVD-1908.iso`)
 	checkError(err, "os.Open")
 	defer func() {
 		_ = file.Close()
@@ -38,6 +38,7 @@ func main() {
 			break
 		}
 		_, _ = conn.Write(buf[:n])
+		fmt.Println("文件发送中……")
 	}
 	n, _ := conn.Read(buf)
 	fmt.Println(string(buf[:n]))

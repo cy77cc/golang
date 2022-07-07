@@ -40,7 +40,7 @@ func sqlInsert() {
 }
 
 func main() {
-	open, err := sqlx.Open("mysql", "root:123456@tcp(127.0.0.1:3306)/shop")
+	open, err := sqlx.Open("mysql", "root:MyPassword@123@tcp(127.0.0.1:3306)/shop")
 	if err != nil {
 		fmt.Println(err)
 		return
